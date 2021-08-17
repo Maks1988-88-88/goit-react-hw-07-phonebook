@@ -1,4 +1,7 @@
-import { useFetchContactsQuery } from 'redux/slices/contacts';
+import {
+  useFetchContactsQuery,
+  useDeleteContactsMutation,
+} from 'redux/slices/contacts';
 
 // import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +17,10 @@ import s from 'components/ContactList/ContactList.module.css';
 
 export default function ContactList() {
   const { data, isFetching } = useFetchContactsQuery();
-  console.log(data);
+  const [deleteContacts, { isLoading : isDeleting }] =
+    useDeleteContactsMutation();
+
+  // console.log(data);
 
   // const contacts = useSelector(state => state.contacts);
   // const filter = useSelector(state => state.filter);
@@ -37,10 +43,10 @@ export default function ContactList() {
               </span>
               <button
                 type="button"
-                // onClick={() => deleteItem(el.id)}
+                onClick={() => deleteContacts(el.id)}
                 className={s.btn}
               >
-                Delete
+                {isDeleting ? `Delete...` : `Delete`}
               </button>
             </p>
           </li>
