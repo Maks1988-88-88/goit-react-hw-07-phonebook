@@ -3,8 +3,8 @@ import { useCreateContactsMutation } from 'redux/slices/contacts';
 
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { addContacts } from 'redux/slices/contacts';
-import { nanoid } from 'nanoid';
+import { addContacts } from 'redux/slices/contacts';
+// import { nanoid } from 'nanoid';
 
 import s from 'components/ContactForm/ContactForm.module.css';
 
@@ -38,6 +38,7 @@ export default function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
     createContacts({ name, number });
+    
 
 
     // if (contacts.some(contact => contact.name === name)) {

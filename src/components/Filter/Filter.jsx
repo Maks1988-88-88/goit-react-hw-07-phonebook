@@ -6,11 +6,11 @@ import { filterContacts } from 'redux/slices/filter';
 
 export default function Filter() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter);
+  // const contacts = useSelector(state => state.contacts);
+  // const filter = useSelector(state => state.filter);
 
   const changeFilter = e => {
-    console.log(e.currentTarget.value);
+    // console.log(e.currentTarget.value);
     let value = e.currentTarget.value;
     dispatch(filterContacts(value));
 
