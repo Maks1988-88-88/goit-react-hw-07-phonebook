@@ -4,7 +4,7 @@ import {
 } from 'redux/slices/contacts';
 
 // import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import { deleteContacts } from 'redux/actions/contacts';
 // import { deleteContacts } from 'redux/slices/contacts';
 
@@ -33,14 +33,14 @@ export default function ContactList() {
     useDeleteContactsMutation();
 
   // console.log('data', data);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // const contacts = useSelector(state => state.data);
   // console.log('contacts', contacts);
   const filter = useSelector(state => state.filter);
   // console.log('filter', filter);
   const contactsList = filtersContacts(data, filter);
-  console.log('contactsList', contactsList);
+  // console.log('contactsList', contactsList);
 
   // const deleteItem = id => {
   //   dispatch(deleteContacts(id));

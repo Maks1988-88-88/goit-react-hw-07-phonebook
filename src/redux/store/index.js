@@ -4,9 +4,7 @@ import { contactsApi } from 'redux/slices/contacts';
 
 import filter from 'redux/slices/filter';
 
-const rootReducer = {
-  filter,
-};
+
 
 
 const store = configureStore({

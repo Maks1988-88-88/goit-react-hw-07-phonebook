@@ -2,8 +2,8 @@ import { useCreateContactsMutation } from 'redux/slices/contacts';
 
 
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from 'redux/slices/contacts';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { addContacts } from 'redux/slices/contacts';
 // import { nanoid } from 'nanoid';
 
 import s from 'components/ContactForm/ContactForm.module.css';
@@ -14,8 +14,8 @@ export default function ContactForm() {
 
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
-  const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
+  // const dispatch = useDispatch();
+  // const contacts = useSelector(state => state.contacts);
 
   const handleInputChange = e => {
     const { name, value } = e.currentTarget;
