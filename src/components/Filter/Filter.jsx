@@ -5,6 +5,7 @@ import { filterContacts } from 'redux/slices/filter';
 // import PropTypes from 'prop-types';
 
 export default function Filter() {
+  
   const dispatch = useDispatch();
   // const contacts = useSelector(state => state.contacts);
   // const filter = useSelector(state => state.filter);

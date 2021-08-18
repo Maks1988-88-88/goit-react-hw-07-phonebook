@@ -1,5 +1,7 @@
-import { useCreateContactsMutation } from 'redux/slices/contacts';
-
+import {
+  useCreateContactsMutation,
+  useFetchContactsQuery,
+} from 'redux/slices/contacts';
 
 import React, { useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +11,8 @@ import React, { useState } from 'react';
 import s from 'components/ContactForm/ContactForm.module.css';
 
 export default function ContactForm() {
+  const { data } = useFetchContactsQuery();
+  console.log('data', data);
 
   const [createContacts] = useCreateContactsMutation();
 
@@ -34,12 +38,15 @@ export default function ContactForm() {
     }
   };
 
-
   const handleSubmit = e => {
     e.preventDefault();
-    createContacts({ name, number });
-    
+    // createContacts({ name, number });
 
+    if (data.some(data => data.name === name)) {
+      alert(`${name} is already in contacts.`);
+    } else {
+      createContacts({ name, number });
+    }
 
     // if (contacts.some(contact => contact.name === name)) {
     //   alert(`${name} is already in contacts.`);
